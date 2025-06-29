@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        className={`m-5 ${geistSans.variable} ${geistMono.variable} antialiased`}>
         {/* Basit Navbar */}
         <nav
           className='w-full h-14 flex items-center px-8 bg-background/60 shadow-lg backdrop-blur-xl sticky top-0 z-50'
@@ -65,6 +65,24 @@ export default function RootLayout({
           </span>
         </nav>
         {children}
+        {/* Footer - profesyonel, navbar ile uyumlu */}
+        <footer
+          className='w-full h-14 flex items-center px-8 bg-background/60 shadow-lg backdrop-blur-xl z-50 border-t border-border/20'
+          style={{ WebkitBackdropFilter: "blur(16px)" }}>
+          <div className='flex w-full items-center justify-between'>
+            <span
+              className='text-base font-bold tracking-tight bg-gradient-to-r from-primary via-white to-primary bg-clip-text text-transparent animate-gradient-x'
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, #53fc18 0%, #53fc18 35%, #fff 50%, #53fc18 65%, #53fc18 100%)",
+              }}>
+              BigStats.co
+            </span>
+            <span className='text-xs text-muted-foreground text-right'>
+              © {new Date().getFullYear()} BigStats.co — Tüm hakları saklıdır.
+            </span>
+          </div>
+        </footer>
       </body>
     </html>
   );
